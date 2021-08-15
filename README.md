@@ -31,7 +31,7 @@ vào các `arguments` sau:
     * `-kubeconfig string`: Đường dẫn file `kubeconfig` (default: `/home/(userid)/.kube/config`)
 
 ```bash
-➜  kugo git:(master) ✗ ./main -deployment test-app -image nginx:1.13 -app test-app
+➜  kugo git:(master) ✗ ./main -deployment test-app -image ductn4/green-rain:v1 -app test-app
 ```
 
 ## Example
