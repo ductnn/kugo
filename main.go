@@ -86,8 +86,6 @@ func main() {
 
 		for i := range *containers {
 			c := *containers
-			fmt.Println(c[i].Image)
-			fmt.Println(c[i].Name)
 			if c[i].Name == *appName {
 				fmt.Println("Old image ->", c[i].Image)
 				fmt.Println("New image ->", *imageName)
@@ -95,8 +93,6 @@ func main() {
 				found = true
 			}
 		}
-
-		fmt.Println(deployment.Spec.Template.Spec.Containers[0].Image)
 
 		if found == false {
 			fmt.Println("The application container not exist in the deployment pods.")
