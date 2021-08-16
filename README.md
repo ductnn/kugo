@@ -4,6 +4,10 @@ title: kugo
 
 # Kubernetes client-go sample
 
+<p align="center">
+    <img src="./img/kugo.gif" width="800">
+</p>
+
 * **Kugo**: Một chiếc `cli tool` nho nhỏ dành cho kubernetes sử  dụng thư viện
 [client-go](https://github.com/kubernetes/client-go).
 * **Kugo** giúp bạn `update image` của ứng dụng đang triển khai.
