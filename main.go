@@ -52,11 +52,11 @@ func main() {
 	flag.Parse()
 
 	if *deploymentName == "" {
-		fmt.Println("You must specify the deployment name.")
+		fmt.Println("The deployment name must be specify.")
 		os.Exit(0)
 	}
 	if *imageName == "" {
-		fmt.Println("You must specify the new image name.")
+		fmt.Println("The new image name must be specify.")
 		os.Exit(0)
 	}
 
@@ -77,7 +77,7 @@ func main() {
 		fmt.Printf("Found deployment\n")
 
 		name := deployment.GetName()
-		fmt.Println("name ->", name)
+		fmt.Println("Name deployment: ", name)
 
 		containers := &deployment.Spec.Template.Spec.Containers
 
@@ -86,8 +86,8 @@ func main() {
 		for i := range *containers {
 			c := *containers
 			if c[i].Name == *appName {
-				fmt.Println("Old image ->", c[i].Image)
-				fmt.Println("New image ->", *imageName)
+				fmt.Println("Old Version Image: ", c[i].Image)
+				fmt.Println("New Version Image: ", *imageName)
 				c[i].Image = *imageName
 				found = true
 			}
