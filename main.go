@@ -1,10 +1,10 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"flag"
 	"context"
+	"flag"
+	"fmt"
+	"os"
 
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -80,7 +80,6 @@ func main() {
 		fmt.Println("name ->", name)
 
 		containers := &deployment.Spec.Template.Spec.Containers
-		fmt.Println(containers)
 
 		found := false
 
@@ -94,8 +93,8 @@ func main() {
 			}
 		}
 
-		if found == false {
-			fmt.Println("The application container not exist in the deployment pods.")
+		if !found {
+			fmt.Println("Container not exist in the deployment pods.")
 			os.Exit(0)
 		}
 
